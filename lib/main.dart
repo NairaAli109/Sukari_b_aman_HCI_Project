@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hci_project/screens/splash_screen/view.dart';
+import 'screens/navigation_screen/view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,9 +17,11 @@ class _MyAppState extends State<MyApp> {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
         home: Scaffold(
-          body:Splash(),
+          body:NavigationScreen(),
         )
     );
   }
 }
+
+
 
