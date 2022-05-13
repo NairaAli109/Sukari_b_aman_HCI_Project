@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hci_project/const/colors.dart';
 import 'package:hci_project/const/size.dart';
 import 'package:hci_project/screens/signup_screen/view.dart';
@@ -32,16 +31,14 @@ class _SignUp_2State extends State<SignUp_2> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(height: height(context, 10),),
+                SizedBox(height: height(context, 15),),
                 //logo
                 SizedBox(
-                  width: width(context, 2.5),
+                  width: width(context, 2),
                   child: Image.asset("assets/logo.png"),
                 ),
-                SizedBox(height: height(context,200),),
-                SizedBox(height: height(context,200),),
                 const Padding(
-                  padding: EdgeInsets.only(right: 30),
+                  padding: EdgeInsets.symmetric(horizontal: 25),
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: Text(
@@ -54,7 +51,6 @@ class _SignUp_2State extends State<SignUp_2> {
                     ),
                   ),
                 ),
-                SizedBox(height: height(context, 200),),
                 //name text field
                 CustomTextField(
                   hint: "الإسم",
@@ -73,7 +69,9 @@ class _SignUp_2State extends State<SignUp_2> {
                   height: height(context, 10),
                   width: width(context, 1),
                   margin:
-                  const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 7.5),
+                  //padding: const EdgeInsets.symmetric(horizontal: 2.5),
+
                   child: DecoratedBox(
                     decoration: BoxDecoration(
                       color: white1,
@@ -86,7 +84,7 @@ class _SignUp_2State extends State<SignUp_2> {
                           value: dropVal,
                           iconSize: 40,
                           hint: const Text(
-                            "Gender",
+                            "النوع",
                             style: TextStyle(color: lightgrey),
                           ),
                           decoration: const InputDecoration(
@@ -135,9 +133,10 @@ class _SignUp_2State extends State<SignUp_2> {
                   },
                   onChange: (val) {},
                 ),
-                SizedBox(height: height(context, 20),),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 161,),
+
+                SizedBox(
+                  width: width(context, 3.5),
+                  height: height(context, 13),
                   child: Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -196,7 +195,7 @@ class _SignUp_2State extends State<SignUp_2> {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15 ),
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15 ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hci_project/const/colors.dart';
 import 'package:hci_project/const/size.dart';
 
@@ -24,10 +25,11 @@ class Button extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: const TextStyle(
+            style:  GoogleFonts.tajawal(
                 fontSize: 25,
                 color: white2,
-                fontWeight: FontWeight.w600),
+                fontWeight: FontWeight.w600
+            )
           ),
         ),
       ),

@@ -11,7 +11,7 @@ class SearchBox extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Padding(
         padding:
-        const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
+        const EdgeInsets.symmetric(horizontal: 8.0, vertical: 15),
         child: TextFormField(
           decoration: InputDecoration(
               filled: true,

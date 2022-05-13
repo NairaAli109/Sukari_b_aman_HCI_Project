@@ -10,6 +10,7 @@ class CustomAppBar extends StatelessWidget {
       backgroundColor: blue,
       title: Image.asset('assets/logo1.png',),
       centerTitle: true,
+      leading: const SizedBox(),
     );
   }
 }

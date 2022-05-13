@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hci_project/widgets/search_text_field.dart';
@@ -5,6 +6,7 @@ import 'package:hci_project/widgets/search_text_field.dart';
 import '../../const/colors.dart';
 import '../../const/size.dart';
 import '../../widgets/custom_app_bar.dart';
+import 'description_screen.dart';
 
 class DoctorScreen extends StatefulWidget {
   const DoctorScreen({Key? key}) : super(key: key);
@@ -33,10 +35,14 @@ class _DoctorScreenState extends State<DoctorScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SearchBox(),
-            Text(
-              'الأكثر بحثا',
-              style: GoogleFonts.tajawal(
-                  fontSize: 17, fontWeight: FontWeight.bold),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+              child: Text(
+                'الأكثر بحثا',
+                style: GoogleFonts.tajawal(
+                    fontSize: 17, fontWeight: FontWeight.bold),
+              ),
             ),
             Row(
               children: [
@@ -72,29 +78,106 @@ class _DoctorScreenState extends State<DoctorScreen> {
                     )),
               ],
             ),
-            Text(
-              'النتائج',
-              style: GoogleFonts.tajawal(
-                  fontSize: 17, fontWeight: FontWeight.bold),
-            ),
-            Container(
-              width: width(context, 1),
-              height: height(context, 5),
-              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              decoration: BoxDecoration(
-                color: white1,
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: white2, width: 2),
-              ),
-              child: Row(
-                children: [
-                  Image.asset('assets/doctor1.png',),
-                  Column(
-                    children: [
-                      Text('')
-                    ],
-                  )
-                ],
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 10),
+            //   child: Text(
+            //     'النتائج',
+            //     style: GoogleFonts.tajawal(
+            //         fontSize: 17, fontWeight: FontWeight.bold),
+            //   ),
+            // ),
+            InkWell(
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const DescriptionScreen())),
+              child: Container(
+                width: width(context, 1),
+                height: height(context, 5),
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                decoration: BoxDecoration(
+                  color: white1,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: white2, width: 2),
+                ),
+                child: Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset(
+                      'assets/doctor1.png',
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        RichText(
+                          text: TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: ' الاسم : ',
+                                style: GoogleFonts.tajawal(
+                                    color: black,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              TextSpan(
+                                text: 'علاء أبو زيد ',
+                                style: GoogleFonts.tajawal(
+                                    color: black,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                        RichText(
+                          text: TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: ' الرقم : ',
+                                style: GoogleFonts.tajawal(
+                                    color: black,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              TextSpan(
+                                text: '0101236547 ',
+                                style: GoogleFonts.tajawal(
+                                    color: black,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Expanded(
+                      child: SizedBox(),
+                    ),
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/star.png',
+                          scale: 1,
+                        ),
+                        Text(
+                          '6.7',
+                          style: GoogleFonts.tajawal(
+                              color: black,
+                              height: 3,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             )
           ],

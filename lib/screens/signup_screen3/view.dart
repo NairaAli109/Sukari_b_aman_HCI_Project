@@ -29,16 +29,17 @@ class _SignUp_3State extends State<SignUp_3> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(height: height(context, 10),),
+                SizedBox(
+                  height: height(context, 15),
+                ),
                 //logo
                 SizedBox(
-                  width: width(context, 2.5),
+                  width: width(context, 2),
                   child: Image.asset("assets/logo.png"),
                 ),
-                SizedBox(height: height(context,200),),
-                SizedBox(height: height(context,200),),
+
                 const Padding(
-                  padding: EdgeInsets.only(right: 30),
+                  padding: EdgeInsets.symmetric(horizontal: 25),
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: Text(
@@ -51,13 +52,15 @@ class _SignUp_3State extends State<SignUp_3> {
                     ),
                   ),
                 ),
-                SizedBox(height: height(context, 200),),
+
                 Container(
                   alignment: Alignment.center,
                   width: width(context, 1),
                   // height: 60,
-                  margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                   decoration: BoxDecoration(
                     color: white1,
                     // border: Border.all(color: white2,width: 2),
@@ -74,9 +77,7 @@ class _SignUp_3State extends State<SignUp_3> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 10),
                         child: Row(
-                          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            //SizedBox(width: width(context, 70),),
                             Text(
                               'أنسولين',
                               style: GoogleFonts.rubik(
@@ -84,6 +85,14 @@ class _SignUp_3State extends State<SignUp_3> {
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Image.asset(
+                              'assets/insulin.png',
+                              height: 20,
+                              width: 20,
+                            )
                           ],
                         ),
                       ),
@@ -135,8 +144,10 @@ class _SignUp_3State extends State<SignUp_3> {
                   alignment: Alignment.center,
                   width: width(context, 1),
                   // height: 60,
-                  margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   decoration: BoxDecoration(
                     color: white1,
                     // border: Border.all(color: white2,width: 2),
@@ -163,6 +174,14 @@ class _SignUp_3State extends State<SignUp_3> {
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Image.asset(
+                              'assets/medicine.png',
+                              height: 20,
+                              width: 20,
+                            )
                           ],
                         ),
                       ),
@@ -210,13 +229,13 @@ class _SignUp_3State extends State<SignUp_3> {
                     ),
                   ),
                 ),
-                SizedBox(height: height(context, 20),),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 161, vertical: 60),
+                SizedBox(
+                  width: width(context, 3.5),
+                  height: height(context, 5),
                   child: Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children:  const [
+                      children: const [
                         CircleAvatar(
                           radius: 9,
                           backgroundColor: lightBlue,
@@ -224,7 +243,7 @@ class _SignUp_3State extends State<SignUp_3> {
                             radius: 8,
                             backgroundColor: white1,
                             child: CircleAvatar(
-                              radius:5,
+                              radius: 5,
                               backgroundColor: lightRed,
                             ),
                           ),
@@ -236,7 +255,7 @@ class _SignUp_3State extends State<SignUp_3> {
                             radius: 8,
                             backgroundColor: white1,
                             child: CircleAvatar(
-                              radius:5,
+                              radius: 5,
                               backgroundColor: lightRed,
                             ),
                           ),
@@ -248,7 +267,7 @@ class _SignUp_3State extends State<SignUp_3> {
                             radius: 8,
                             backgroundColor: white1,
                             child: CircleAvatar(
-                              radius:5,
+                              radius: 5,
                               backgroundColor: lightRed,
                             ),
                           ),
@@ -260,7 +279,7 @@ class _SignUp_3State extends State<SignUp_3> {
                             radius: 8,
                             backgroundColor: white1,
                             child: CircleAvatar(
-                              radius:5,
+                              radius: 5,
                               backgroundColor: lightgrey,
                             ),
                           ),
@@ -270,15 +289,22 @@ class _SignUp_3State extends State<SignUp_3> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 50),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_) => const SignUp_2())),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const SignUp_2())),
                         child: Row(
                           children: const [
-                            Icon(Icons.arrow_back_ios,color: black,),
+                            Icon(
+                              Icons.arrow_back_ios,
+                              color: black,
+                            ),
                             Text(
                               "رجوع ",
                               style: TextStyle(
@@ -291,7 +317,10 @@ class _SignUp_3State extends State<SignUp_3> {
                         ),
                       ),
                       InkWell(
-                        onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_) => const Disease_Screen())),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const Disease_Screen())),
                         child: Row(
                           children: const [
                             Text(
@@ -302,7 +331,10 @@ class _SignUp_3State extends State<SignUp_3> {
                                 color: black,
                               ),
                             ),
-                            Icon(Icons.arrow_forward_ios_outlined,color: black,),
+                            Icon(
+                              Icons.arrow_forward_ios_outlined,
+                              color: black,
+                            ),
                           ],
                         ),
                       ),

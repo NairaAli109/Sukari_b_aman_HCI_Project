@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hci_project/const/colors.dart';
 import 'package:hci_project/const/size.dart';
 import 'package:hci_project/widgets/textField.dart';
+
 import '../signup_screen2/view.dart';
 
 class SignUp extends StatefulWidget {
@@ -15,7 +15,7 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  String? email,passwordUser;
+  String? email, passwordUser;
 
   var dropVal;
 
@@ -27,19 +27,17 @@ class _SignUpState extends State<SignUp> {
         child: Form(
           key: _formKey,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(height: height(context, 10),),
+              SizedBox(
+                height: height(context, 15),
+              ),
               //logo
               SizedBox(
-                width: width(context, 2.5),
+                width: width(context, 2),
                 child: Image.asset("assets/logo.png"),
               ),
-              SizedBox(height: height(context,200),),
-              //email text field
-              SizedBox(height: height(context,200),),
               const Padding(
-                padding: EdgeInsets.only(right: 30),
+                padding: EdgeInsets.symmetric(horizontal: 25),
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Text(
@@ -52,32 +50,33 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
               ),
-              SizedBox(height: height(context, 200),),
               //email text field
               CustomTextField(
                 hint: "البريد الإلكتروني",
                 icon: Icons.mail_outlined,
                 secure: false,
                 validator: (value) {
-                  if (value.toString().isEmpty){
-                    return"برجاء إدخال البريد الإلكتروني ";
+                  if (value.toString().isEmpty) {
+                    return "برجاء إدخال البريد الإلكتروني ";
                   }
                   return null;
                 },
-                onChange: (val ) { email=val; },
+                onChange: (val) {
+                  email = val;
+                },
               ),
               //password text field
               CustomTextField(
                 hint: "كلمه المرور",
                 icon: Icons.lock,
                 secure: true,
-                validator: (value){
-                  if(value.toString().isEmpty){
+                validator: (value) {
+                  if (value.toString().isEmpty) {
                     return "برجاء إدخال كلمه المرور";
                   }
                 },
-                onChange: (val){
-                  passwordUser=val;
+                onChange: (val) {
+                  passwordUser = val;
                 },
               ),
               //confirmation text field
@@ -93,84 +92,87 @@ class _SignUpState extends State<SignUp> {
                 },
                 onChange: (val) {},
               ),
-              SizedBox(height: height(context, 20),),
+
+              SizedBox(
+                width: width(context, 3.5),
+                height: height(context, 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    CircleAvatar(
+                      radius: 9,
+                      backgroundColor: lightgrey,
+                      child: CircleAvatar(
+                        radius: 8,
+                        backgroundColor: white1,
+                        child: CircleAvatar(
+                          radius: 5,
+                          backgroundColor: lightgrey,
+                        ),
+                      ),
+                    ),
+                    CircleAvatar(
+                      radius: 9,
+                      backgroundColor: lightgrey,
+                      child: CircleAvatar(
+                        radius: 8,
+                        backgroundColor: white1,
+                        child: CircleAvatar(
+                          radius: 5,
+                          backgroundColor: lightgrey,
+                        ),
+                      ),
+                    ),
+                    CircleAvatar(
+                      radius: 9,
+                      backgroundColor: lightgrey,
+                      child: CircleAvatar(
+                        radius: 8,
+                        backgroundColor: white1,
+                        child: CircleAvatar(
+                          radius: 5,
+                          backgroundColor: lightgrey,
+                        ),
+                      ),
+                    ),
+                    CircleAvatar(
+                      radius: 9,
+                      backgroundColor: lightBlue,
+                      child: CircleAvatar(
+                        radius: 8,
+                        backgroundColor: white1,
+                        child: CircleAvatar(
+                          radius: 5,
+                          backgroundColor: lightRed,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 161,vertical: 50),
-                child: Center(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: InkWell(
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => const SignUp_2())),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children:  const [
-                      CircleAvatar(
-                        radius: 9,
-                        backgroundColor: lightgrey,
-                        child: CircleAvatar(
-                          radius: 8,
-                          backgroundColor: white1,
-                          child: CircleAvatar(
-                            radius:5,
-                            backgroundColor: lightgrey,
-                          ),
-                        ),
+                    children: const [
+                      Icon(
+                        Icons.arrow_back_ios,
+                        color: black,
                       ),
-                      CircleAvatar(
-                        radius: 9,
-                        backgroundColor: lightgrey,
-                        child: CircleAvatar(
-                          radius: 8,
-                          backgroundColor: white1,
-                          child: CircleAvatar(
-                            radius:5,
-                            backgroundColor: lightgrey,
-                          ),
-                        ),
-                      ),
-                      CircleAvatar(
-                        radius: 9,
-                        backgroundColor: lightgrey,
-                        child: CircleAvatar(
-                          radius: 8,
-                          backgroundColor: white1,
-                          child: CircleAvatar(
-                            radius:5,
-                            backgroundColor: lightgrey,
-                          ),
-                        ),
-                      ),
-                      CircleAvatar(
-                        radius: 9,
-                        backgroundColor: lightBlue,
-                        child: CircleAvatar(
-                          radius: 8,
-                          backgroundColor: white1,
-                          child: CircleAvatar(
-                            radius:5,
-                            backgroundColor: lightRed,
-                          ),
+                      Text(
+                        "التالي ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: black,
                         ),
                       ),
                     ],
                   ),
                 ),
               ),
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30, ),
-                  child: InkWell(
-                    onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_) => const SignUp_2())),
-                    child: Row(
-                      children: const [
-                        Icon(Icons.arrow_back_ios,color: black,),
-                        Text(
-                          "التالي ",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            color: black,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
             ],
           ),
         ),

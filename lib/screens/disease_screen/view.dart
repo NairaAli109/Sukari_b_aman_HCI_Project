@@ -1,13 +1,10 @@
-
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:hci_project/const/colors.dart';
 import 'package:hci_project/const/size.dart';
+import 'package:hci_project/screens/navigation_screen/view.dart';
+import 'package:hci_project/screens/signup_screen3/view.dart';
 import 'package:hci_project/widgets/Expanded_textfield.dart';
 import 'package:hci_project/widgets/button.dart';
-
-import '../signup_screen3/view.dart';
 
 class Disease_Screen extends StatefulWidget {
   const Disease_Screen({Key? key}) : super(key: key);
@@ -17,33 +14,37 @@ class Disease_Screen extends StatefulWidget {
 }
 
 class _Disease_ScreenState extends State<Disease_Screen> {
-
   var checkbox1 = false;
+
   void checkBoxChange1(bool? val) {
     setState(() {
       checkbox1 = val!;
     });
   }
+
   var checkbox2 = false;
+
   void checkBoxChange2(bool? val) {
     setState(() {
       checkbox2 = val!;
     });
   }
+
   var checkbox3 = false;
+
   void checkBoxChange3(bool? val) {
     setState(() {
       checkbox3 = val!;
     });
   }
+
   void checkBoxChange4(bool? val) {
     setState(() {
       checkbox4 = val!;
     });
   }
+
   var checkbox4 = false;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -55,15 +56,16 @@ class _Disease_ScreenState extends State<Disease_Screen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(height: height(context, 10),),
+              SizedBox(
+                height: height(context, 20),
+              ),
               //logo
               SizedBox(
-                width: width(context, 2.5),
+                width: width(context, 2),
                 child: Image.asset("assets/logo.png"),
               ),
-             // SizedBox(height: height(context,200),),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
+                padding: EdgeInsets.symmetric(horizontal: 25),
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Text(
@@ -78,14 +80,14 @@ class _Disease_ScreenState extends State<Disease_Screen> {
               ),
               //SizedBox(height: height(context, 150),),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Text(
                     " هل تعاني من أمراض أخرى؟",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 25,
+                      fontSize: 22,
                       color: black,
                     ),
                   ),
@@ -93,7 +95,7 @@ class _Disease_ScreenState extends State<Disease_Screen> {
               ),
               //SizedBox(height: height(context, 150),),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                padding: const EdgeInsets.symmetric(horizontal: 30.0),
                 child: Column(
                   children: [
                     //checkbox1
@@ -102,7 +104,7 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                         Checkbox(
                           value: checkbox1,
                           onChanged: checkBoxChange1,
-                          checkColor:blue ,
+                          checkColor: blue,
                           activeColor: white2,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(3.5),
@@ -111,7 +113,8 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                         const Text(
                           "ضغط",
                           style: TextStyle(
-                            fontSize: 22,color: blue,
+                            fontSize: 22,
+                            color: blue,
                           ),
                         ),
                       ],
@@ -122,7 +125,7 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                         Checkbox(
                           value: checkbox2,
                           onChanged: checkBoxChange2,
-                          checkColor:blue ,
+                          checkColor: blue,
                           activeColor: white2,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(3.5),
@@ -131,7 +134,8 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                         const Text(
                           "قلب",
                           style: TextStyle(
-                            fontSize: 22,color: blue,
+                            fontSize: 22,
+                            color: blue,
                           ),
                         ),
                       ],
@@ -142,7 +146,7 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                         Checkbox(
                           value: checkbox3,
                           onChanged: checkBoxChange3,
-                          checkColor:blue ,
+                          checkColor: blue,
                           activeColor: white2,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(3.5),
@@ -151,7 +155,8 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                         const Text(
                           "حساسيه صدر",
                           style: TextStyle(
-                            fontSize: 22,color: blue,
+                            fontSize: 22,
+                            color: blue,
                           ),
                         ),
                       ],
@@ -162,7 +167,7 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                         Checkbox(
                           value: checkbox4,
                           onChanged: checkBoxChange4,
-                          checkColor:blue ,
+                          checkColor: blue,
                           activeColor: white2,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(3.5),
@@ -171,7 +176,8 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                         const Text(
                           "أخرى",
                           style: TextStyle(
-                            fontSize: 22,color: blue,
+                            fontSize: 22,
+                            color: blue,
                           ),
                         ),
                       ],
@@ -185,15 +191,17 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                 ),
               ),
               Button(
-                  text: "تسجيل",
-                  onTap: () {}
+                text: "تسجيل",
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const NavigationScreen())),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 161,),
+              SizedBox(
+                width: width(context, 3.5),
+                height: height(context, 20),
                 child: Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children:  const [
+                    children: const [
                       CircleAvatar(
                         radius: 9,
                         backgroundColor: lightBlue,
@@ -201,7 +209,7 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                           radius: 8,
                           backgroundColor: white1,
                           child: CircleAvatar(
-                            radius:5,
+                            radius: 5,
                             backgroundColor: lightRed,
                           ),
                         ),
@@ -213,7 +221,7 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                           radius: 8,
                           backgroundColor: white1,
                           child: CircleAvatar(
-                            radius:5,
+                            radius: 5,
                             backgroundColor: lightRed,
                           ),
                         ),
@@ -225,7 +233,7 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                           radius: 8,
                           backgroundColor: white1,
                           child: CircleAvatar(
-                            radius:5,
+                            radius: 5,
                             backgroundColor: lightRed,
                           ),
                         ),
@@ -237,7 +245,7 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                           radius: 8,
                           backgroundColor: white1,
                           child: CircleAvatar(
-                            radius:5,
+                            radius: 5,
                             backgroundColor: lightRed,
                           ),
                         ),
@@ -247,12 +255,20 @@ class _Disease_ScreenState extends State<Disease_Screen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30,  ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 30,
+                ),
                 child: InkWell(
-                  onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_) => const SignUp_3())),
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUp_3())),
                   child: Row(
                     children: const [
-                      Icon(Icons.arrow_back_ios,color: black,),
+                      Icon(
+                        Icons.arrow_back_ios,
+                        color: black,
+                      ),
                       Text(
                         "رجوع ",
                         style: TextStyle(

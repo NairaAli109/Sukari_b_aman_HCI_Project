@@ -26,7 +26,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 17.5, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10.5),
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: TextFormField(

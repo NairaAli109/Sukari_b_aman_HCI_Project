@@ -34,7 +34,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   scale: .8,
                 ),
                 Text(
-                  'محمد احمد غلاب',
+                  'محمد احمد ',
                   style: GoogleFonts.tajawal(
                       height: 2,
                       fontSize: 15,

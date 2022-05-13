@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hci_project/const/colors.dart';
+import 'package:hci_project/screens/chart/view.dart';
 import 'package:hci_project/screens/doctor_screen/view.dart';
 import '../../const/size.dart';
 import '../advice_screen/view.dart';
@@ -14,9 +15,9 @@ class NavigationScreen extends StatefulWidget {
 }
 
 class _NavigationScreenState extends State<NavigationScreen> {
-  int pageindex = 0;
+  int pageindex = 3;
   List<Widget> pages = [
-    const Text('data'),
+    const ChartScreen(),
     const DoctorScreen(),
     const AdviceScreen(),
     const HomeScreen()
