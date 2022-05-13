@@ -1,5 +1,6 @@
+
 import 'package:flutter/material.dart';
-import 'screens/navigation_screen/view.dart';
+import 'package:hci_project/screens/splash_screen/view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,14 +15,15 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  const MaterialApp(
       debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          body:NavigationScreen(),
+        home: Directionality(
+          textDirection: TextDirection.rtl,
+          child: Scaffold(
+            body:Splash(),
+          ),
         )
     );
   }
 }
-
-
 

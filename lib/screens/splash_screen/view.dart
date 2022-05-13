@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hci_project/const/size.dart';
 import '../../const/colors.dart';
+import 'dart:async';
+
+import '../login_screen/view.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -11,15 +13,19 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   @override
+  void initState(){
+    Timer(const Duration(seconds: 2), (){
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => const Login()));
+    });
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  const Scaffold(
       backgroundColor: white1,
       body: Center(
-        child: SizedBox(
-            width: width(context, 1.5),
-            height: height(context, 1.5),
-            child: const Image(image: AssetImage("assets/logo.png"))
-        ),
+        child: Image(image: AssetImage("assets/logo.png")),
       ),
     );
   }
